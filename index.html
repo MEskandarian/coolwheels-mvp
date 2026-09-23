@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CoolWheels — Public Cooling Stations for Wheelchair Users</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F6EFE3;
+    --ink:#26231F;
+    --ochre:#D79A4B;
+    --teal:#3E6B70;
+    --terracotta:#C1694F;
+    --line:#DED2BC;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.55;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif; font-weight:600; line-height:1.1;}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 28px;}
+  header{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:22px 28px; max-width:1040px; margin:0 auto;
+  }
+  header .mark{font-family:'Fraunces',serif; font-weight:600; font-size:1.3rem;}
+  header nav a{color:var(--ink); text-decoration:none; margin-left:28px; font-size:.92rem;}
+
+  .hero{position:relative;}
+  .hero img{width:100%; height:78vh; min-height:420px; object-fit:cover; display:block;}
+  .hero-copy{
+    position:absolute; left:0; bottom:0; padding:40px 28px 48px;
+    max-width:640px;
+    background:linear-gradient(0deg, rgba(30,26,20,.82) 10%, rgba(30,26,20,0) 100%);
+    color:var(--cream);
+  }
+  .hero-copy .kicker{color:var(--ochre); font-size:.9rem; letter-spacing:.02em; margin-bottom:10px;}
+  .hero-copy h1{font-size:clamp(2.1rem, 5vw, 3.2rem); max-width:9.5ch;}
+  .hero-copy p{margin-top:16px; max-width:44ch; font-size:1.05rem; color:#EDE4D3;}
+  .hero-copy .cta{margin-top:26px; display:inline-block; background:var(--terracotta); color:#fff;
+    padding:13px 26px; border-radius:3px; text-decoration:none; font-weight:500;}
+
+  section{padding:64px 0;}
+  .lede{max-width:640px;}
+  .lede h2{font-size:1.9rem;}
+  .lede p{margin-top:14px; color:#4A453D;}
+
+  .features{
+    display:grid; grid-template-columns:1.3fr 1fr; gap:2px; margin-top:36px;
+    background:var(--line);
+  }
+  .feature{background:var(--cream); padding:28px;}
+  .feature.tall{grid-row:span 2;}
+  .feature .tag{color:var(--teal); font-size:.82rem; font-weight:500; margin-bottom:8px;}
+  .feature h3{font-size:1.2rem; font-weight:600; font-family:'Inter',sans-serif;}
+  .feature p{margin-top:8px; color:#4A453D; font-size:.95rem;}
+
+  .tiers{margin-top:56px;}
+  table{width:100%; border-collapse:collapse; margin-top:18px;}
+  th,td{text-align:left; padding:12px 14px; border-bottom:1px solid var(--line); font-size:.92rem;}
+  th{font-weight:600; color:var(--teal);}
+
+  .steps{margin-top:40px; border-left:2px solid var(--line);}
+  .step{padding:0 0 30px 26px; position:relative;}
+  .step::before{content:attr(data-n); position:absolute; left:-11px; top:0;
+    width:20px; height:20px; border-radius:50%; background:var(--ochre); color:#fff;
+    font-size:.72rem; font-weight:600; display:flex; align-items:center; justify-content:center;}
+  .step h3{font-size:1.05rem; font-family:'Inter',sans-serif; font-weight:600;}
+  .step p{margin-top:6px; color:#4A453D; font-size:.93rem;}
+
+  .interest{background:var(--ink); color:var(--cream); border-radius:4px; padding:44px;}
+  .interest h2{color:var(--cream); font-size:1.7rem;}
+  .interest p{margin-top:10px; color:#C9C2B4; max-width:52ch;}
+  .interest form{margin-top:26px; display:flex; gap:12px; flex-wrap:wrap;}
+  .interest input{flex:1; min-width:220px; padding:12px 14px; border:none; border-radius:3px; font-size:.95rem;}
+  .interest button{background:var(--terracotta); color:#fff; border:none; padding:12px 22px;
+    border-radius:3px; font-weight:500; cursor:pointer; font-size:.95rem;}
+  .interest .note{margin-top:14px; font-size:.82rem; color:#8A8377;}
+  .tally-embed{margin-top:26px; background:var(--cream); border-radius:4px; overflow:hidden;}
+  .tally-embed iframe{display:block; border:none;}
+
+  footer{padding:36px 0 60px; color:#8A8377; font-size:.85rem;}
+  footer a{color:var(--teal);}
+
+  @media (max-width:720px){
+    .features{grid-template-columns:1fr;}
+    .feature.tall{grid-row:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="mark">CoolWheels</div>
+  <nav>
+    <a href="#how">How it works</a>
+    <a href="#interest">Get involved</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <img src="assets/hero.jpg" alt="A CoolWheels public cooling pod on a European street, with a wheelchair user resting inside under a misting fan while their wheelchair charges.">
+  <div class="hero-copy">
+    <div class="kicker">Deep Dive Intensive · Cooling Europe · Group 5</div>
+    <h1>A place to cool down, charge up, and keep moving.</h1>
+    <p>Solar-powered public cooling stations built for wheelchair users — shade, misting, and charging, right where the heat hits hardest.</p>
+    <a class="cta" href="#interest">I'd use this / I want to help pilot it</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section id="problem">
+    <div class="lede">
+      <h2>Heat isn't just uncomfortable — for wheelchair users, it's a mobility problem.</h2>
+      <p>Electric wheelchair batteries and joystick controllers overheat and drain faster in direct sun. Existing shaded rest spots are often unreachable — blocked by curbs, spaced too far apart, or simply not built with wheelchair access in mind. That turns an ordinary hot day into a real barrier to getting around independently.</p>
+    </div>
+
+    <div class="features">
+      <div class="feature tall">
+        <div class="tag">Cooling</div>
+        <h3>Shade + fine misting</h3>
+        <p>A shaded pod with an active misting fan gives immediate relief from direct sun — no waiting for shade to pass overhead, no detour to find a tree.</p>
+      </div>
+      <div class="feature">
+        <div class="tag">Power</div>
+        <h3>Wheelchair charging</h3>
+        <p>An insulated outlet built for electric wheelchairs and mobility aids, so heat-driven battery drain doesn't strand anyone mid-route.</p>
+      </div>
+      <div class="feature">
+        <div class="tag">Energy</div>
+        <h3>Solar-powered</h3>
+        <p>Rooftop solar panels power the misting fan and charging outlet directly — no grid connection needed, and near-zero running cost for the city.</p>
+      </div>
+      <div class="feature">
+        <div class="tag">Access</div>
+        <h3>Accessibility-key entry</h3>
+        <p>Unlocked with an existing municipal accessibility credential (like AustriaID or CityGraz), so the pod stays available for the people who need it most.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tiers">
+    <div class="lede">
+      <h2>Two tiers, one system</h2>
+      <p>A Plus tier extends the same pod for longer stays — useful near transit hubs and busy squares where people naturally spend more time.</p>
+    </div>
+    <table>
+      <tr><th>Tier</th><th>Includes</th><th>Best placed at</th></tr>
+      <tr><td>Standard</td><td>Shade, misting, wheelchair charging, solar power</td><td>Residential streets, parks, everyday routes</td></tr>
+      <tr><td>Plus</td><td>Standard + device charging + fold-down desk + Wi-Fi</td><td>Transit hubs, squares, high-dwell locations</td></tr>
+    </table>
+  </section>
+
+  <section id="how">
+    <div class="lede">
+      <h2>How we'd pilot it</h2>
+    </div>
+    <div class="steps">
+      <div class="step" data-n="1"><h3>Map the routes</h3><p>Identify the most-used wheelchair routes through resident input and mobility data.</p></div>
+      <div class="step" data-n="2"><h3>Build one pod</h3><p>Work with a fabricator on a cost-conscious pilot unit, sized for a single high-traffic location.</p></div>
+      <div class="step" data-n="3"><h3>Partner with the city</h3><p>Distribute accessibility-key access through the municipality and apply for climate-adaptation subsidy funding.</p></div>
+      <div class="step" data-n="4"><h3>Run a 3-month pilot</h3><p>Track usage, dwell time, and user-reported comfort and safety.</p></div>
+      <div class="step" data-n="5"><h3>Decide on scale-up</h3><p>Use pilot results to plan further installations or introduce a minimal, insurance-covered user fee.</p></div>
+    </div>
+  </section>
+
+  <section id="interest">
+    <div class="interest">
+      <h2>Help us validate this before we build it</h2>
+      <p>We're a student team piloting CoolWheels as part of the Cooling Europe Deep Dive Intensive. If you use a wheelchair or mobility aid, work in disability services, or are involved in municipal climate planning, we'd like to hear from you.</p>
+      <div class="tally-embed">
+        <iframe src="https://tally.so/r/7RGbPa" width="100%" height="500" frameborder="0" title="CoolWheels feedback form"></iframe>
+      </div>
+      <p class="note">This is a validation page for a course project, not a live product. Feedback goes straight into our Tally form above.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    CoolWheels — a Group 5 project for the EURECA-PRO Deep Dive Intensive Course, "Cooling Europe." Built on interview insights from wheelchair users and mobility-disability personas gathered during Phase 2 (Observe).
+  </div>
+</footer>
+
+</body>
+</html>
