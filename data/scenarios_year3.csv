@@ -1,0 +1,9 @@
+metric,conservative,base,upside
+new_pods,6,10,18
+price_factor_pct,95,100,108
+service_contract_factor_pct,90,100,110
+standard_share_pct,80,70,60
+installation_plus_sponsorship_revenue_eur,136200,247600,496224
+service_revenue_eur,22500,35000,60500
+total_revenue_eur,158700,282600,556724
+total_variable_costs_eur,118780,197128,355372

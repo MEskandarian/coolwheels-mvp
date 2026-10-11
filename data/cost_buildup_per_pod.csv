@@ -1,0 +1,11 @@
+item,standard_eur,plus_eur,cost_type
+structural_shell,4200,4800,direct
+solar_panels_controller_battery,2200,2400,direct
+misting_fan_pump_tank_filtration,1500,1700,direct
+electrical_charging_ip_protection,1200,1300,direct
+access_control_hardware,800,850,direct
+plus_device_charging_desk_wifi,0,1600,direct
+fabrication_labor_assembly,1600,1800,direct
+transport_logistics,500,550,installation
+site_preparation_anchoring_commissioning,2000,2200,installation
+certification_permitting,2000,2000,compliance
